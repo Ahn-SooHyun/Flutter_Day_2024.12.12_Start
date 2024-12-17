@@ -16,7 +16,7 @@ class Def extends StatelessWidget {
             Text('Hello World'),
             Text('Flutter'),
             Icon(Icons.local_convenience_store_rounded),
-            Image.asset('/backFrontEnd.png'),
+            Image.asset('/img/backFrontEnd.png'),
           ],
         ),
       ),

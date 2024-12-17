@@ -16,7 +16,31 @@ class Home extends StatelessWidget {
             ElevatedButton(onPressed: () {
               print('Hi');
               Navigator.pushNamed(context, '/def');
-            }, child: Text('기본 Widget'))
+            }, child: Text('기본 Widget')),
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/rowColumn');
+            }, child: Text('Row Column 사용')),
+
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/stairs');
+            }, child: Text('Stairs')),
+
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/bottom');
+            }, child: Text('Bottom')),
+
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/boxCon');
+            }, child: Text('BoxCon')),
+
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/con2');
+            }, child: Text('Con2')),
           ],
         ),
       ),

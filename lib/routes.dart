@@ -11,6 +11,12 @@ import 'assignment/20241213/Bottom.dart';
 import 'def/BoxCon.dart';
 import 'def/Con2.dart';
 
+import 'def2/Counter.dart';
+import 'def2/Con3.dart';
+
+
+import 'def2/ParentChild.dart';
+
 //Java Map ( HashMap Key, Value )
 final Map<String, WidgetBuilder> routes = {
   '/home': (context) => Home(),
@@ -24,4 +30,10 @@ final Map<String, WidgetBuilder> routes = {
 
   '/boxCon': (context) => BoxCon(),
   '/con2': (context) => Con2(),
+
+  '/counter': (context) => Counter(),
+  '/con3': (context) => Con3(),
+
+
+  '/parentChild': (context) => ParentChild(),
 };

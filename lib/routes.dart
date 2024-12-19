@@ -17,6 +17,9 @@ import 'def2/Con3.dart';
 
 import 'def2/ParentChild.dart';
 
+import 'def2/FormW.dart';
+import 'def2/FormW2.dart';
+
 //Java Map ( HashMap Key, Value )
 final Map<String, WidgetBuilder> routes = {
   '/home': (context) => Home(),
@@ -34,6 +37,8 @@ final Map<String, WidgetBuilder> routes = {
   '/counter': (context) => Counter(),
   '/con3': (context) => Con3(),
 
-
   '/parentChild': (context) => ParentChild(),
+
+  '/formW': (context) => Formw(),
+  '/formW2': (context) => FormW2(),
 };

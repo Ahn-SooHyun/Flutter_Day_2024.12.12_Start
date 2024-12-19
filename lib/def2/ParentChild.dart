@@ -45,6 +45,9 @@ class _ParentChildState extends State<ParentChild> {
     if(!val.isEmpty && val == 'remove') {
       removeCount();
     }
+    if(!val.isEmpty && val == 'reset') {
+      resetCount();
+    }
   }
 
   /**
@@ -63,6 +66,15 @@ class _ParentChildState extends State<ParentChild> {
   void removeCount() {
     setState(() {
       _count--;
+    });
+  }
+
+  /**
+   * count reset 기능
+   */
+  void resetCount() {
+    setState(() {
+      _count = 0;
     });
   }
 
@@ -114,6 +126,26 @@ class _ParentChildState extends State<ParentChild> {
   }
 }
 
+class _Child extends StatelessWidget {
+
+  final int childCnt; // 상수 ( 메모리에 저장되는 주소 값을 변경하지 못 하게 막는다. // 숫자는 변경 가능.)
+
+  const _Child({ required this.childCnt, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 600,
+      height: 100,
+      decoration: BoxDecoration(
+          border: Border.all(width: 5, color: Colors.redAccent)
+      ),
+      child: Text('부모로부터 받은 값: ${childCnt}'),
+    );
+  }
+}
+
+
 class _Child2 extends StatelessWidget {
 
   final Function(String) onEvt;
@@ -145,32 +177,13 @@ class _Child2 extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.all(16),
-              child: FloatingActionButton(onPressed: () {}, child: Icon(Icons.star),),
+              child: FloatingActionButton(onPressed: () {
+                onEvt('reset');
+              }, child: Icon(Icons.star),),
             )
 
           ],
         )
-    );
-  }
-}
-
-
-
-class _Child extends StatelessWidget {
-
-  final int childCnt; // 상수 ( 메모리에 저장되는 주소 값을 변경하지 못 하게 막는다. // 숫자는 변경 가능.)
-
-  const _Child({ required this.childCnt, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 600,
-      height: 100,
-      decoration: BoxDecoration(
-          border: Border.all(width: 5, color: Colors.redAccent)
-      ),
-      child: Text('부모로부터 받은 값: ${childCnt}'),
     );
   }
 }
